@@ -1,0 +1,62 @@
+<div class="container">
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab label="Get UPTC tokens">
+            <mat-card>
+                <mat-card-title>
+                    Get UPTC tokens
+                </mat-card-title>
+
+                <mat-card-content>
+                    <p>To get some UPTC tokens send ETH</p>
+                    <form>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Amount in ETH"
+                                   [(ngModel)]="ethAmount" [ngModelOptions]="{standalone: true}"/>
+                        </mat-form-field>
+                    </form>
+                    <button class="float-right" (click)="getTokens()">Get tokens</button>
+
+                </mat-card-content>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Get UPTC balance">
+            <mat-card>
+                <mat-card-title>
+                    Get UPTC balance
+                </mat-card-title>
+
+                <mat-card-content>
+                    <form>
+                        <mat-form-field class="example-full-width">
+                            <input matInput value="{{balance}}" readonly/>
+                            <label matSuffix>UPTC</label>
+                        </mat-form-field>
+                    </form>
+                    <button class="float-right" (click)="getBalance()">Get Balance</button>
+
+                </mat-card-content>
+            </mat-card>
+        </mat-tab>
+        <mat-tab label="Send UPTC tokens">
+            <mat-card>
+                <mat-card-title>
+                    Send tokens
+                </mat-card-title>
+
+                <mat-card-content>
+                    <form>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Token amount" [(ngModel)]="tokenAmount" [ngModelOptions]="{standalone: true}"/>
+                            <label matSuffix>UPTC</label>
+                        </mat-form-field>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Address recipient" [(ngModel)]="reciverAccount" [ngModelOptions]="{standalone: true}"/>
+                        </mat-form-field>
+                    </form>
+                    <button class="float-right" (click)="sendTokens()">Transfer tokens</button>
+
+                </mat-card-content>
+            </mat-card>
+        </mat-tab>
+    </mat-tab-group>
+</div>
